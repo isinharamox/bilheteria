@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import javax.swing.*;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,9 +23,18 @@ public class Main {
         String dataevento[] = {moana.getData(), PTOGQJA.getData(), UTG.getData(), orquestra.getData()};
         double precoevento[] = {moana.getprecoIngresso(), PTOGQJA.getprecoIngresso(), UTG.getprecoIngresso(), orquestra.getprecoIngresso()};
 
-        JOptionPane.showInputDialog(null, "Deseja imprimir as informacos dos eventos? (s/n)");
+        String s = JOptionPane.showInputDialog(null, "Deseja imprimir as informacos dos eventos? (s/n)");
+        Scanner escolha = new Scanner (System.in);
+        if (!escolha.equals("S")) {
+            for (int i = 0; i < 5; i++){
+                String s1 = JOptionPane.showInputDialog(null, nomeevento[i]);
+                String s2 = JOptionPane.showInputDialog(null, horaevento[i]);
+                String s3 = JOptionPane.showInputDialog(null, localevento[i]);
+                String s4 = JOptionPane.showInputDialog(null, dataevento[i]);
+                String s5 = JOptionPane.showInputDialog(null, precoevento[i]);
+            }
+       }
 
-        if ()
 
     }
 }
