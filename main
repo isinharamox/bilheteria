@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+import javax.swing.*;
+import java.util.Date;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Evento> eventos = new ArrayList<>();
+
+        Evento moana = new Filme ("Moana2", "17:30", "Del Rey", "28/11/2024", 35.00);
+        Evento PTOGQJA = new Filme("Para Todos Os GarotEs Que Ja Amei", "19:30", "Del Rey", "30/8/2024", 15.00);
+        Evento UTG = new Teatro ("Um Tal Guimaraes", "17:30", "casa De Teatro", "16/08/2024", 45.00);
+        Evento orquestra = new Concerto ("Orquestra", "16:00", "Sala De Minas", "20/08/2024", 50.00);
+
+        eventos.add(moana);
+        eventos.add(PTOGQJA);
+        eventos.add(UTG);
+        eventos.add(orquestra);
+
+        String nomeevento[] = {moana.getNome(), PTOGQJA.getNome(), UTG.getNome(), orquestra.getNome()};
+        String horaevento[] = {moana.getHora(), PTOGQJA.getHora(), UTG.getHora(), orquestra.getHora()};
+        String localevento[] = {moana.getLocal(), PTOGQJA.getLocal(), UTG.getLocal(), orquestra.getLocal()};
+        String dataevento[] = {moana.getData(), PTOGQJA.getData(), UTG.getData(), orquestra.getData()};
+        double precoevento[] = {moana.getprecoIngresso(), PTOGQJA.getprecoIngresso(), UTG.getprecoIngresso(), orquestra.getprecoIngresso()};
+
+        JOptionPane.showInputDialog(null, "Deseja imprimir as informacos dos eventos? (s/n)");
+
+        if ()
+
+    }
+}
