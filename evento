@@ -35,6 +35,10 @@ public abstract class Evento implements RelatorioReceita{
 
         return quantiaIngressos - ingressos_V.size();
     }
+    
+    public List<Ingresso> getIngressos_V() {
+        return ingressos_V;
+    }
 
     public abstract void add_I(Ingresso novo_I);
 
@@ -67,7 +71,6 @@ public abstract class Evento implements RelatorioReceita{
         }
         return assentos_Disp()-quant;
     }
-
     @Override
     public double somaTotal_Receita(){
         double somaTotal = 0;
@@ -93,6 +96,9 @@ public abstract class Evento implements RelatorioReceita{
     }
     public String getData() {
         return this.data;
+    }
+    public int getquantiaIngressos() {
+        return quantidadeIngressos;
     }
     @Override
     public String toString(){
