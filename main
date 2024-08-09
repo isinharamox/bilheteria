@@ -17,24 +17,51 @@ public class Main {
         eventos.add(UTG);
         eventos.add(orquestra);
 
-        String nomeevento[] = {moana.getNome(), PTOGQJA.getNome(), UTG.getNome(), orquestra.getNome()};
-        String horaevento[] = {moana.getHora(), PTOGQJA.getHora(), UTG.getHora(), orquestra.getHora()};
-        String localevento[] = {moana.getLocal(), PTOGQJA.getLocal(), UTG.getLocal(), orquestra.getLocal()};
-        String dataevento[] = {moana.getData(), PTOGQJA.getData(), UTG.getData(), orquestra.getData()};
-        double precoevento[] = {moana.getprecoIngresso(), PTOGQJA.getprecoIngresso(), UTG.getprecoIngresso(), orquestra.getprecoIngresso()};
+        listarEventos();
+        exibirReceitaTotalAcumulada();
+        
+       // String nomeevento[] = {moana.getNome(), PTOGQJA.getNome(), UTG.getNome(), orquestra.getNome()};
+       // String horaevento[] = {moana.getHora(), PTOGQJA.getHora(), UTG.getHora(), orquestra.getHora()};
+       // String localevento[] = {moana.getLocal(), PTOGQJA.getLocal(), UTG.getLocal(), orquestra.getLocal()};
+       // String dataevento[] = {moana.getData(), PTOGQJA.getData(), UTG.getData(), orquestra.getData()};
+       // double precoevento[] = {moana.getprecoIngresso(), PTOGQJA.getprecoIngresso(), UTG.getprecoIngresso(), orquestra.getprecoIngresso()};
 
-        String s = JOptionPane.showInputDialog(null, "Deseja imprimir as informacos dos eventos? (s/n)");
-        Scanner escolha = new Scanner (System.in);
-        if (!escolha.equals("S")) {
-            for (int i = 0; i < 5; i++){
-                String s1 = JOptionPane.showInputDialog(null, nomeevento[i]);
-                String s2 = JOptionPane.showInputDialog(null, horaevento[i]);
-                String s3 = JOptionPane.showInputDialog(null, localevento[i]);
-                String s4 = JOptionPane.showInputDialog(null, dataevento[i]);
-                String s5 = JOptionPane.showInputDialog(null, precoevento[i]);
-            }
-       }
+       // String s = JOptionPane.showInputDialog(null, "Deseja imprimir as informacos dos eventos? (s/n)");
+       // Scanner escolha = new Scanner (System.in);
+      //  if (!escolha.equals("S")) {
+        //    for (int i = 0; i < 5; i++){
+            //    String s1 = JOptionPane.showInputDialog(null, nomeevento[i]);
+          //      String s2 = JOptionPane.showInputDialog(null, horaevento[i]);
+             //   String s3 = JOptionPane.showInputDialog(null, localevento[i]);
+             //   String s4 = JOptionPane.showInputDialog(null, dataevento[i]);
+               // String s5 = JOptionPane.showInputDialog(null, precoevento[i]);
+           // }
+      // }
 
 
     }
+    private static void listarEventos() {
+        String resultado = "Eventos:\n";
+        for (Evento evento : eventos) {
+            resultado += "Nome: " + evento.getNome() + "\n";
+            resultado += "Data: " + evento.getData() + "\n";
+            resultado += "Hora: " + evento.getHora() + "\n";
+            resultado += "Local: " + evento.getLocal() + "\n";
+            resultado += "Ingressos Vendidos: " + evento.getIngressos_V().size() + "\n";
+            resultado += "Ingressos Disponíveis: " + evento.getassentos_Disp() + "\n";
+        }
+        JOptionPane.showMessageDialog(null, resultado);
+    }
+
+    // Método para exibir a receita total acumulada de todos os eventos
+    private static void exibirReceitaTotalAcumulada() {
+        double receitaTotal = 0;
+        for (Evento evento : eventos) {
+            receitaTotal += evento.calcularReceita();
+        }
+        JOptionPane.showMessageDialog(null, "Receita Total Acumulada de Todos os Eventos:\n" +
+                                          "R$ " + receitaTotal);
+    }
+}
+
 }
