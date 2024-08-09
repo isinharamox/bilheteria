@@ -57,7 +57,7 @@ public class Main {
     private static void exibirReceitaTotalAcumulada() {
         double receitaTotal = 0;
         for (Evento evento : eventos) {
-            receitaTotal += evento.calcularReceita();
+            receitaTotal += evento.somaTotal_Receita();
         }
         JOptionPane.showMessageDialog(null, "Receita Total Acumulada de Todos os Eventos:\n" +
                                           "R$ " + receitaTotal);
